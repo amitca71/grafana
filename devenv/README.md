@@ -30,15 +30,17 @@ for some databases there are multiple images, for example there is prometheus_ma
 version.
 
 ```bash
-make devenv sources=influxdb,prometheus2,elastic5
+./create_docker_compose.sh grafana postgres prometheus mssql_tests mssql prometheus_random_data postgres_tests
 ```
 
-Some of the blocks support dynamic change of the image version used in the Docker file. The signature looks like this: 
+you can see the full list of directories by not adding any argument: 
 
 ```bash
-make devenv sources=postgres,openldap,grafana postgres_version=9.2 grafana_version=6.7.0-beta1
+./create_docker_compose.sh
 ```
-
+after successfull execution, you would have docker-compose.yml file, that contains all rellevant services.
+you can execute this by: 
+docker-compose up
 
 ### Notes per block
 
